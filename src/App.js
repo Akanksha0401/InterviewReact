@@ -12,8 +12,12 @@ function App() {
 
   const addition = (value1, value2) => {
 
-    const sum = parseInt(value1 || 0) + parseInt(value2 || 0)
-    setResult(isNaN(sum) ? 0 : sum)
+    if (value1 !== '' && value2 !== '') {
+      const sum = parseInt(value1 || 0) + parseInt(value2 || 0);
+      setResult(isNaN(sum) ? 0 : sum);
+    } else {
+      setResult(null);
+    }
   }
   return (
     <>

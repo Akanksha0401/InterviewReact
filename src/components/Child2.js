@@ -9,8 +9,12 @@ export default function Child2(props) {
     const [result3, setResult3] = useState(null);
 
     const addition = (value1, value2) => {
-        const sum = parseInt(value1 || 0) + parseInt(value2 || 0);
-        return isNaN(sum) ? 0 : sum;
+        if (value1 !== '' && value2 !== '') {
+            const sum = parseInt(value1 || 0) + parseInt(value2 || 0);
+            return (isNaN(sum) ? 0 : sum);
+        } else {
+            return (null);
+        }
     };
 
     return (
